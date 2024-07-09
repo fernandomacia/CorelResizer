@@ -10,7 +10,7 @@ Este proyecto tiene como objetivo solucionar una problemática de Corel Draw ace
 <p>Al realizar diseños para strass se utilizan programas de dibujo vectorizado. En el programa Corel Draw se ha detectado un problema con el redimensionado de múltiples objetos, y este problema es el siguiente: </p>
 <img src="static/img/imagen1.jpg" alt="Composición ss10" width="240" style="display: block; margin: auto;"/>
 <p>Si tenemos dibujados varios objetos circulares de un tamaño ss10 (3mm) y queremos cambiarlos por otros de tamaño ss06 (2mm), debemos de ir seleccionando cada uno de los objetos y redimensionarlo uno por uno, ya que no existe herramienta que tras hacer la selección de todos estos objetos cambie el tamaño de cada uno de los objetos manteniendo su posición. </p>
-<img src="static/img/zapato.jpeg" alt="Zapato con strass" width="150" style="display: block; margin: auto;"/>
+<img src="static/img/zapato.jpeg" alt="Zapato con strass" width="250" style="display: block; margin: auto;"/>
 <p>Este tipo de diseños es muy usual en sectores como el del calzado, confección, bolsos, etc... Como podremos imaginar la variedad de diseños es muy amplia, habiendo unos muy sencillos con una cantidad pequeña de cristales y otros que utilizan más de 8000. Cuando queremos hacer pruebas para ver que efecto nos hace cambiar el tamaño de los cristales en estos diseños tan complejos es cuando el trabajo que supone redimensionarlos uno por uno es muy tedioso. Por este motivo me decidí a relizar un macro que automatizara esta función, disminuyendo significativamente el tiempo en realizar el trabajo, así como la eliminación de errores por la manipulación de cada uno de los objetos.</p>
 
 ### Capturas de Pantalla
