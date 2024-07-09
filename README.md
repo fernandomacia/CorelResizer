@@ -15,10 +15,10 @@ Este tipo de diseños es muy usual en sectores como el del calzado, confección,
 ### Capturas de Pantalla
 
 #### Formulario selección tamaño
-<img src="static/img/captura1.jpg" alt="Strass" width="500" style="display: block;"/>
+<img src="static/img/captura1.JPG" alt="Strass" width="500" style="display: block;"/>
 
 #### Formulario combinación
-<img src="static/img/captura2.jpg" alt="Strass" width="500" style="display: block;"/>
+<img src="static/img/captura2.JPG" alt="Strass" width="500" style="display: block;"/>
 
 ## Tecnologías Utilizadas :hammer_and_wrench:
 
