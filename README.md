@@ -23,7 +23,7 @@ Este proyecto tiene como objetivo solucionar una problemática de Corel Draw ace
 
 ## Instalación y uso :rocket:
 
-1. Descarga `CorelResizer.bas` (clonando el repositorio).
+1. Descarga `CorelResizer.bas` desde la [última Release](https://github.com/fernandomacia/CorelResizer/releases/latest). No lo descargues desde la vista del código de GitHub: ahí está en UTF-8 y las tildes se verían mal en CorelDRAW.
 2. En CorelDRAW abre el editor de VBA (`Alt + F11`).
 3. Menú **File → Import File...** y selecciona `CorelResizer.bas`.
 4. Selecciona los objetos a redimensionar y ejecuta la macro desde **Herramientas → Macros → Ejecutar macro** → `CorelResizer`.
@@ -45,6 +45,8 @@ Todo el proceso se puede deshacer con un único `Ctrl + Z`.
 ## Versiones :pushpin:
 
 Esta macro ha sido probada en CorelDRAW X6, X7 y X8.
+
+Los cambios de cada versión están en el [CHANGELOG](CHANGELOG.md).
 
 ## Créditos :art:
 
