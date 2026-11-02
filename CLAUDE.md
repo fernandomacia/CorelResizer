@@ -1,7 +1,8 @@
 # CorelResizer
 
-Macro VBA para CorelDRAW (probada en X6, X7 y X8) que redimensiona múltiples
-objetos manteniendo su posición. Pensada para diseños de strass.
+Macro VBA para CorelDRAW (probada en X6, X7 y X8) que ajusta círculos, elipses,
+cuadrados, rectángulos, rombos y cometas a unas medidas dadas, manteniendo su
+posición y orientación aunque estén deformados. Pensada para diseños de strass.
 
 ## Forma de trabajo
 
@@ -14,7 +15,7 @@ objetos manteniendo su posición. Pensada para diseños de strass.
   variables también son en español (`entrada`, `Pregunta`), y se mantiene así
   para no mezclar idiomas dentro del mismo archivo.
 
-## El archivo de la macro
+## Los archivos de la macro
 
 - `CorelResizer.bas` está en disco en **Windows-1252 + CRLF**, porque el editor
   VBA de CorelDRAW no entiende UTF-8 y las tildes saldrían rotas al importar.
@@ -22,8 +23,16 @@ objetos manteniendo su posición. Pensada para diseños de strass.
   (`working-tree-encoding=CP1252`), para que GitHub lo muestre bien.
 - Nunca editarlo con herramientas que asuman UTF-8: leerlo y escribirlo como
   cp1252 y conservar CRLF. Comprobar después que no queda ningún LF suelto.
+- Guardar siempre codificando primero a cp1252 y escribiendo en un archivo
+  temporal que luego sustituye al original: un fallo de codificación no debe
+  poder vaciar el archivo (ya pasó una vez con el `.bas`). No usar caracteres
+  que no existen en Windows-1252 (`π`, `ᵀ`...), ni siquiera en comentarios.
 - El módulo se llama `modCorelResizer` (`Attribute VB_Name`) y la macro
   `CorelResizer`. Mismo nombre en ambos provoca ambigüedades en VBA.
+- `frmCorelResizer.frm` también va en Windows-1252 + CRLF.
+- `frmCorelResizer.frx` es binario y lo genera el editor de VBA: nunca se edita
+  a mano. Los controles del formulario se crean por código en el `.frm`, así
+  que cualquier cambio de diseño se hace en el código, no en el `.frx`.
 
 ## Formato de commits
 
@@ -46,7 +55,7 @@ están: reescribirlos cambiaría todos los hashes a cambio de un log más bonito
 
 ### Scopes
 
-- `macro`: `CorelResizer.bas`
+- `macro`: `CorelResizer.bas` y `frmCorelResizer.*`
 - `readme`: `README.md`
 - `config`: `.gitattributes`, `.gitignore`, `.vscode/`
 - `assets`: imágenes e iconos de `static/`
@@ -83,9 +92,10 @@ Cuando se pida publicar una versión, en este orden:
    del `.bas`, con un mensaje que resuma los cambios desde la anterior.
 3. Subir solo esa etiqueta: `git push origin vX.Y.Z` (nunca `git push --tags`).
    Comprobar con `git ls-remote --tags origin`.
-4. Crear la Release de GitHub sobre la etiqueta y adjuntar el `.bas` del disco
-   (ya en Windows-1252 + CRLF): quien lo descargue suelto desde la web lo
-   recibiría en UTF-8.
+4. Crear la Release de GitHub sobre la etiqueta y adjuntar `CorelResizer.bas`,
+   `frmCorelResizer.frm` y `frmCorelResizer.frx` del disco (ya en
+   Windows-1252 + CRLF): quien los descargue sueltos desde la web recibiría el
+   texto en UTF-8.
 
 ## Flujo de commits
 
@@ -114,5 +124,8 @@ Cuando se pidan "los commits", nunca se ejecutan automáticamente:
       `BeginCommandGroup`/`EndCommandGroup` (un solo Ctrl+Z)
 - [ ] `Optimization`/`EventsEnabled` y la configuración del documento
       (unidad, punto de referencia) restaurados también si hay error
-- [ ] Archivo en Windows-1252 + CRLF, sin LF sueltos
+- [ ] Constantes y declaraciones de módulo al principio, antes de cualquier
+      procedimiento
+- [ ] Las opciones del formulario con su `GroupName`
+- [ ] Archivos en Windows-1252 + CRLF, sin LF sueltos
 - [ ] Mensajes al usuario en español con ortografía correcta (`¿…?`, tildes)

@@ -7,6 +7,25 @@ y el proyecto usa [Versionado Semántico](https://semver.org/lang/es/) desde la
 versión 1.1.0. Las versiones anteriores se numeraban 1.03 y 1.04; aquí se
 recogen como 1.0.3 y 1.0.4.
 
+## [1.2.0] - 2026-11-02
+
+### Added
+- Además de círculos, la macro ajusta elipses, cuadrados, rectángulos, rombos y cometas: un diámetro o lado para círculos y cuadrados, y dos medidas (larga y corta) para el resto.
+- Corrige formas deformadas: cada forma recupera su forma correcta con las medidas indicadas, manteniendo su centro y su orientación aunque estuviera estirada, girada o inclinada. Si solo se estiró, recupera exactamente su giro original.
+- Formulario único (`frmCorelResizer`) que sustituye a los cuadros de diálogo: tipo de forma, medidas, qué hacer al terminar y avisos de error dentro del propio formulario.
+- Comprobación previa de que todas las formas seleccionadas encajan con el tipo elegido; si no, se avisa sin modificar el documento.
+- Al terminar se puede elegir entre no hacer nada, agrupar o combinar las formas.
+- El formulario recuerda la última configuración usada.
+
+### Changed
+- Los rectángulos, elipses y polígonos nativos de CorelDRAW se convierten a curvas antes de ajustarlos.
+- El formulario cuenta formas en lugar de objetos: una curva combinada con 500 cristales cuenta como 500.
+- La instalación requiere importar también `frmCorelResizer.frm` (con su `.frx`).
+- Nuevas capturas en el README.
+
+### Removed
+- El cuadro de diálogo para el tamaño y la pregunta final para combinar los objetos.
+
 ## [1.1.0] - 2026-10-29
 
 ### Added
