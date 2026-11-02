@@ -1,1 +1,3 @@
 *.bas text eol=crlf working-tree-encoding=CP1252
+*.frm text eol=crlf working-tree-encoding=CP1252
+*.frx binary
